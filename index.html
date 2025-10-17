@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full">
+        <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h1 class="text-xl font-bold text-purple-400">CalcNinja</h1>
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                </div>
+                
+                <div class="calculator-display bg-gray-700 rounded-xl p-4 mb-6 text-right">
+                    <div id="previous-operand" class="text-gray-400 text-lg h-6"></div>
+                    <div id="current-operand" class="text-3xl font-bold">0</div>
+                </div>
+                
+                <div class="grid grid-cols-4 gap-3">
+                    <button onclick="clearAll()" class="btn-operation bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-lg">AC</button>
+                    <button onclick="deleteLastChar()" class="btn-operation bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 rounded-lg">
+                        <i data-feather="delete"></i>
+                    </button>
+                    <button onclick="appendOperation('%')" class="btn-operation bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 rounded-lg">%</button>
+                    <button onclick="appendOperation('/')" class="btn-operation bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 rounded-lg">÷</button>
+                    
+                    <button onclick="appendNumber('7')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">7</button>
+                    <button onclick="appendNumber('8')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">8</button>
+                    <button onclick="appendNumber('9')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">9</button>
+                    <button onclick="appendOperation('*')" class="btn-operation bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 rounded-lg">×</button>
+                    
+                    <button onclick="appendNumber('4')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">4</button>
+                    <button onclick="appendNumber('5')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">5</button>
+                    <button onclick="appendNumber('6')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">6</button>
+                    <button onclick="appendOperation('-')" class="btn-operation bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 rounded-lg">-</button>
+                    
+                    <button onclick="appendNumber('1')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">1</button>
+                    <button onclick="appendNumber('2')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">2</button>
+                    <button onclick="appendNumber('3')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">3</button>
+                    <button onclick="appendOperation('+')" class="btn-operation bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 rounded-lg">+</button>
+                    
+                    <button onclick="appendNumber('0')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg col-span-2">0</button>
+                    <button onclick="appendNumber('.')" class="btn-operation bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg">.</button>
+                    <button onclick="calculate()" class="btn-operation bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 rounded-lg">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

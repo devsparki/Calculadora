@@ -1,0 +1,9 @@
+.btn-operation {
+    transition: all 0.2s ease-in-out;
+}
+.btn-operation:hover {
+    transform: scale(1.05);
+}
+.calculator-display {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
